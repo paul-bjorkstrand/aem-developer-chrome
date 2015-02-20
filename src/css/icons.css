@@ -23,6 +23,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* TODO: make a 13px wide blank space font glyph, this is 12px wide (4px each nbsp) with font-size 13px */
+.icon-blank:before {
+	content: "\00a0\00a0\00a0";
+}
 .icon-file-empty:before {
 	content: "\e924";
 }
@@ -68,8 +72,26 @@
 .icon-arrow-down:before {
 	content: "\e604";
 }
+.icon-arrow-up:before {
+	content: "\e604";
+	display: inline-block;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
 .icon-arrow-right:before {
 	content: "\e605";
+}
+.icon-arrow-left:before {
+	content: "\e605";
+	display: inline-block;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 .icon-github:before {
 	content: "\e60b";
@@ -79,4 +101,9 @@
 }
 .icon-linkedin:before {
 	content: "\e60e";
+}
+
+/* Treat the icons as "buttons" with the link-style cursor */
+.icon-button {
+  cursor: pointer;
 }

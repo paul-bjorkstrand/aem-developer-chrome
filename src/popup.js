@@ -169,8 +169,8 @@ app.controller('PopupController', function($scope, $localStorage, $http) {
     /**
      * Remove item from servers list. 
      */
-    remove: function() {
-      $scope.options.servers.splice(this.$index, 1);
+    remove: function(index) {
+      $scope.options.servers.splice(index, 1);
     },
     /**
      * Add item to servers list.
@@ -179,7 +179,37 @@ app.controller('PopupController', function($scope, $localStorage, $http) {
       $scope.options.servers.push({name: $scope.ServersForm.newServer.name, url: $scope.ServersForm.newServer.url});
       $scope.ServersForm.newServer.name = '';
       $scope.ServersForm.newServer.url = '';
+    },
+    /**
+     * 
+     */
+    moveUp: function(index) {
+      var servers = $scope.options.servers;
+      servers.splice(index - 1, 0, servers.splice(index, 1)[0]);
+    }, 
+    /**
+     * 
+     */
+    moveDown: function(index) {
+      var servers = $scope.options.servers;
+      servers.splice(index + 1, 0, servers.splice(index, 1)[0]);
     }
+  };
+  
+  $scope.removeServer = function() {
+    $scope.ServersForm.remove(this.$index);
+  };
+  
+  $scope.addServer = function() {
+    $scope.ServersForm.add();
+  };
+  
+  $scope.moveServerUp = function() {
+    $scope.ServersForm.moveUp(this.$index);
+  };
+  
+  $scope.moveServerDown = function() {
+    $scope.ServersForm.moveDown(this.$index);
   };
   
   /**

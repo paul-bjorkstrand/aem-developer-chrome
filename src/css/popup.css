@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   font-family: Helvetica,Arial,sans-serif;
   font-size: 13px;
-  width: 450px;
+  width: 475px;
 }
 
 input, button {
@@ -41,7 +41,7 @@ a.light:hover {
 .body {
   background: #7e7e7e;
   padding: 0;
-  width: 450px;
+  width: 100%;
   padding-top: 2px;
 }
 
@@ -329,11 +329,6 @@ ul.info-list li {
   width: 190px;
   margin-top: 5px;
   margin-left: 5px;
-}
-
-.icon-plus,
-.icon-minus {
-  cursor: pointer;
 }
 
 form {

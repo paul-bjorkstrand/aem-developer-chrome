@@ -144,12 +144,16 @@
                     <li data-ng-repeat="server in options.servers" data-ng-show="ServersForm.isMode('edit')" class="input-container">
                         <input placeholder="name" data-ng-model="server.name">
                         <input placeholder="url" data-ng-model="server.url">
-                        <i data-ng-click="remove()" class="icon-minus"></i>
+                        <i data-ng-click="moveServerUp()" class="icon-button icon-arrow-up" data-ng-show="!$first"></i>
+                        <i class="icon-blank" data-ng-show="$first"></i>
+                        <i data-ng-click="moveServerDown()" class="icon-button icon-arrow-down" data-ng-show="!$last"></i>
+                        <i class="icon-blank" data-ng-show="$last"></i>
+                        <i data-ng-click="removeServer()" class="icon-button icon-minus"></i>
                     </li>
                     <li data-ng-show="ServersForm.isMode('edit')" class="input-container">
                         <input placeholder="name" data-ng-model="ServersForm.newServer.name" required>
                         <input placeholder="url" data-ng-model="ServersForm.newServer.url" required>
-                        <i data-ng-click="add()" class="icon-plus"></i>
+                        <i data-ng-click="addServer()" class="icon-button icon-plus"></i>
                     </li>
                     <li data-ng-show="ServersForm.isMode('import')">
                       <textarea data-ng-model="ServersForm.serversJson" class=""></textarea>
